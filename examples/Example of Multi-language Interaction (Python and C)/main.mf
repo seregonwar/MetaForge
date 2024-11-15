@@ -1,0 +1,30 @@
+// This example shows how to use Python for advanced cryptography and C for a simple function that calculates the sum of two numbers.
+
+
+import "py" "cryptography";  // Import Python cryptography library
+import "c" "math_utils.c";   // Import a C file for additional functionality
+
+// Main function demonstrating multi-language integration
+fn main() -> void {
+    // Example 1: Python encryption (AES)
+    let py_code = """
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from os import urandom
+
+def aes_encrypt(data, key):
+    cipher = Cipher(algorithms.AES(key), modes.CFB8(urandom(16)))
+    encryptor = cipher.encryptor()
+    return encryptor.update(data)
+""";
+
+    py eval py_code;  // Evaluate Python code in MetaForge environment
+
+    let data = "Hello MetaForge!";  // Data to encrypt
+    let key = genkey 16;  // Generate a 16-byte key for AES encryption
+    let encrypted = py call "aes_encrypt" with data, key;  // Call Python function
+    print("Encrypted data (AES):", encrypted);
+
+    // Example 2: C function call (sum of two numbers)
+    let result = c call "add_numbers" with 10, 20;  // Call C function to add numbers
+    print("Sum result (C):", result);
+}
