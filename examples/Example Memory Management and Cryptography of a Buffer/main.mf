@@ -1,0 +1,43 @@
+import "win_api.mf";
+import "py" "cryptography";
+
+// Define a custom structure to represent a memory block
+struct DataBlock {
+    ptr address;  // Pointer to the start of the memory block
+    u32 size;     // Size of the memory block
+    u32 protection;  // Memory protection level
+}
+
+// Main function demonstrating memory management and cryptographic operations
+fn main() -> void {
+    // Step 1: Allocate memory
+    let buffer_size = 256; // In bytes
+    let buffer = alloc buffer_size;  // Allocating memory for the buffer
+    if buffer == null {
+        print("Memory allocation failed.");
+        ret;
+    }
+    print("Buffer allocated at address:", buffer);
+
+    // Step 2: Populate the buffer with data
+    let input_data = "This is a string to encrypt.";  // Example data to encrypt
+    memcpy(buffer, input_data, strlen(input_data));  // Copy data to allocated memory
+    print("Buffer populated with data.");
+
+    // Step 3: Hash the data (SHA-256)
+    let hash_result = hash buffer with "SHA256";  // Hashing the buffer content
+    print("Hash calculated (SHA-256):", hash_result);
+
+    // Step 4: Encrypt the data using AES encryption
+    let key = genkey 32; // Generating a 32-byte key for AES encryption
+    let encrypted_data = encrypt buffer using key;  // Encrypt the buffer
+    print("Encrypted data:", encrypted_data);
+
+    // Step 5: Decrypt the data back to original content
+    let decrypted_data = decrypt encrypted_data using key;  // Decrypting the data
+    print("Decrypted data:", decrypted_data);
+
+    // Step 6: Deallocate the memory
+    free buffer;  // Free the allocated memory
+    print("Buffer deallocated successfully.");
+}
