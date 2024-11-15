@@ -1,107 +1,131 @@
-# MetaForge
-MetaForge is a **meta-level** programming language, situated conceptually between low-level (like Assembly) and mid-level (like C). It provides total control of hardware, combined with modern syntax and advanced functionality, making it a versatile tool for developing critical and secure applications.
-### **Objectives**
-- Combine low-level control with modern simplicity and versatility.
-- Support interoperability with libraries and languages such as **Python**, **C** and **C++**.
-- Provide tools for cryptography, memory manipulations, and complex systems.
+
+# MetaForge Programming Language
+
+MetaForge is a low-level meta-programming language that bridges the gap between assembly and C, while integrating support for Python, C, and C++ libraries. Designed for system-level programming and advanced memory manipulation, MetaForge offers a unique approach to multi-language interoperability and high-performance computing.
+
 ---
-## **Main Features**
-- **Compact and modern syntax**: Inspired by languages such as Rust and Python.
-- **Advanced typing**: Support for generics, cryptographic types and pattern matching.
-- **Multi-language compatibility**: Integrates external libraries in C, C++ and Python.
-- **Low-level operations**: Direct memory manipulation.
-- **Cryptographic extensions**: Built-in functions for encryption, hashing and key management.
+
+## Key Features
+
+- **Low-Level Access:** Positioned between assembly and C, offering direct communication with system resources.
+- **Cross-Language Integration:** Supports Python, C, and C++ libraries seamlessly.
+- **Custom Syntax:** Combines simplicity with flexibility, tailored for developers seeking control over memory, cryptography, and pattern matching.
+- **Extensibility:** MetaForge is designed to evolve, with planned support for web systems and additional language integrations.
+
 ---
-## **Syntax of MetaForge**.
-### **Declarations**.
-MetaForge supports declarations of variables, functions, structures, enumerations and module imports.
-#### **Example of structure declaration**
+
+## Language Overview
+
+### Basic Types
+MetaForge provides a wide range of basic types, including:
+- Signed and unsigned integers: `i8`, `u8`, `i16`, `u16`, etc.
+- Floating-point numbers: `f32`, `f64`
+- Special types: `ptr`, `key`, `cipher`, `hash`, etc.
+
+### Memory Operations
+MetaForge includes powerful memory manipulation commands:
+- `alloc` for memory allocation
+- `free` for deallocation
+- `deref` for dereferencing pointers
+- `ref` for obtaining references
+
+### Cryptographic Operations
+Built-in cryptographic primitives:
+- `encrypt` and `decrypt` for data security
+- `hash` for generating hashes
+- `genkey` for key generation
+- `cipher` for advanced cryptographic operations
+
+### Control Flow
+Supports standard control flow constructs:
+- `if`, `while`, `for`
+- Pattern matching with `match`
+- Error handling with `try` and `catch`
+
+### Advanced Constructs
+- **Generics:** Define reusable code with parameterized types.
+- **Pattern Matching:** Match complex data structures with custom patterns.
+- **List Comprehension:** Write concise and efficient iterations.
+- **Lambda Functions:** Inline anonymous functions for functional programming.
+
+---
+
+## Installation
+
+MetaForge requires the following dependencies:
+1. **Python (3.x)** for integration scripts.
+2. **C/C++ Toolchain** for compilation and linking.
+3. **Custom MetaForge CLI** (provided in the release package).
+
+### Steps
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/seregonwar/metaforge.git
+   cd metaforge
+   ```
+2. Build the compiler:  
+   ```bash
+   make
+   ```
+3. Run your first MetaForge program:  
+   ```bash
+   ./metaforge my_program.mf
+   ```
+
+---
+
+## Examples
+
+### Hello World
 ```metaforge
-struct MemoryBlock {
-    ptr address;
-    u32 size;
-    u32 protection;
+fn main() -> void {
+    print("Hello, MetaForge!");
 }
 ```
-#### **Example function declaration**
+
+### Memory Allocation
 ```metaforge
-fn allocate_memory(HANDLE process, u32 size) -> MemoryBlock {
-    let block = MemoryBlock {
-        address: alloc size,
-        size: size,
-        protection: 0x40 // PAGE_EXECUTE_READWRITE
-    };
-    ret block;
+fn allocate_memory() -> ptr {
+    let buffer = alloc 1024;
+    ret buffer;
 }
 ```
----
-### **Advanced types**
-MetaForge introduces types for arrays, closures, and encryption.
-- **Array**: `u32[10]` represents an array of 10 unsigned integers.
-- **Closure**: `fn(i32) -> bool` represents an anonymous function that accepts an integer and returns a boolean.
-- **Cryptographic types**: Specific to handle encryption operations.
-  - `key`, `cipher`, `hash`, `bytes`, `stream`.
----
-### **Pattern Matching**.
-Pattern matching allows expressions to be compared against multiple instances in an elegant way.
-#### **Example**
+
+### Cryptographic Hashing
 ```metaforge
-match value {
-    0 => print(“Zero”),
-    1 => print(“One”),
-    _ => print(“Other”)
+fn compute_hash() -> hash {
+    let data = "important data";
+    let hashed = hash(data);
+    ret hashed;
 }
 ```
+
 ---
-### **Error handling**
-MetaForge supports constructs for error checking via `try` and `catch` blocks.
-#### **Example**
-```metaforge
-try {
-    let result = risky_function();
-} catch err {
-    print(“Error:”, err);
-}
-```
+
+## Roadmap
+
+- Simplify syntax while maintaining low-level control.
+- Expand compatibility with additional languages.
+- Enable web-system integration.
+- Develop a dedicated IDE with real-time syntax support.
+
 ---
-### **Memory operations**
-MetaForge includes direct memory management features.
-#### **Example allocation**
-```metaforge
-let ptr = alloc 64; // Allocates 64 bytes
-free ptr; // Frees up memory
-```
+
+## Contributing
+
+We welcome contributions! Please check the [CONTRIBUTING.md](CONTRIBUTING.md) file for details on our coding standards and submission process.
+
 ---
-### **Cryptographic operations**
-Built-in constructs for encryption, hashing and key management.
-#### **Hashing example**
-```metaforge
-let digest = hash “message” with “SHA256”;
-```
+
+## License
+
+MetaForge is licensed under the **Maudrigal Inc License**:
+- Commercial use requires a license fee.
+- Redistribution is prohibited; only the official repository is allowed.
+
+For more details, contact **SeregonWar** via GitHub.
+
 ---
-## **Practical Examples**
-### **Hello World**
-```metaforge
-fn main() {
-    print(“Hello, MetaForge!”);
-}
-```
-### **Advanced Pattern Matching**
-````metaforge
-let result = match input {
-    0 => “No results.”
-    1 => “Found one”,
-    _ => “Unknown error”
-};
-```
-### **Cryptography**
-````metaforge
-let key = genkey 256;
-let ciphertext = encrypt “message” using key;
-let plaintext = decrypt ciphertext using key;
-```
----
-## **Future extensions**
-- Support for **WebAssembly** for execution in the browser.
-- Integration with modern languages such as **Rust** and **Go**.
-- Dedicated IDE for a better development experience.
+
+**Developed with passion by SeregonWar**  
+Explore, Extend, and Forge the Future!
