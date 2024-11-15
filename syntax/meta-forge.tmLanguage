@@ -1,0 +1,93 @@
+<plist version="1.0">
+  <dict>
+    <key>name</key>
+    <string>MetaForge</string>
+    <key>fileTypes</key>
+    <array>
+      <string>mf</string> <!-- MetaForge file extension -->
+    </array>
+    <key>patterns</key>
+    <array>
+      <!-- Rules for basic types -->
+      <dict>
+        <key>name</key>
+        <string>keyword.type.basic</string>
+        <key>match</key>
+        <string>\b(i8|i16|i32|i64|u8|u16|u32|u64|f32|f64|bool)\b</string>
+      </dict>.
+
+      <!-- Rule for declaring a struct -->
+      <dict>
+        <key>name</key>
+        <string>keyword.struct</string>
+        <key>match</key>
+        <string>\bstruct\s+\w+\s*{</string>
+      </dict>
+
+      <!-- Assignment rule -->
+      <dict>
+        <key>name</key>
+        <string>keyword.assignment</string>
+        <key>match</key>
+        <string>\w+\s*=\s*[^;]+;</string>
+      </dict>.
+
+      <!-- Rule for a function declaration -->
+      <dict>
+        <key>name</key>
+        <string>keyword.function</string>
+        <key>match</key>
+        <string>\bfn\s+\w+\s*\(.*\)\s*->\s*\w+\s*\{</string>
+      </dict>
+
+      <!-- Rule for the if statement -->
+      <dict>
+        <key>name</key>
+        <string>keyword.control.if</string>
+        <key>match</key>
+        <string>\bif\s+.*\s*{</string>
+      </dict>.
+
+      <!-- Rule for declaring variables -->
+      <dict>
+        <key>name</key>
+        <string>keyword.declaration.variable</string>
+        <key>match</key>
+        <string>\b(let|var)\s+\w+\s*(?::\s*\w+)?\s*=\s*.*;</string>
+      </dict>.
+
+      <!-- Rule for a match pattern -->
+      <dict>
+        <key>name</key>
+        <string>keyword.control.match</string>
+        <key>match</key>
+        <string>\bmatch\s+.*\s*</string>
+      </dict>
+
+      <!-- Rule for the catch clause -->
+      <dict>
+        <key>name</key>
+        <string>keyword.control.catch</string>
+        <key>match</key>
+        <string>\bcatch\s+\w+\s*s*{</string>
+      </dict>
+
+      <!-- Rules for generic types -->
+      <dict>
+        <key>name</key>
+        <string>keyword.generic</string>
+        <key>match</key>
+        <string><\w+(\s*,\s*\w+)*></string>
+      </dict>
+
+      <!-- Rule for comments -->
+      <dict>
+        <key>name</key>
+        <string>comment.line.double-slash</string>
+        <key>match</key>
+        <string>//.*$</string>
+      </dict>
+
+    </array>
+  </dict>
+</plist>
