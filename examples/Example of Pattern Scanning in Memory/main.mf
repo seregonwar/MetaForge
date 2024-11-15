@@ -1,0 +1,22 @@
+// This example shows how to scan memory for a specific pattern, which is useful for reverse engineering or debugging.
+
+fn main() -> void {
+    let memory_start = alloc 1024; // Simulate a block of memory
+    let memory_size = 1024;  // Memory block size
+    let pattern = "ABC123";  // Pattern to find
+
+    // Populate memory with some random values
+    memset(memory_start, 0x00, memory_size);
+    memcpy(memory_start + 500, pattern, strlen(pattern));  // Insert the pattern at the middle of memory
+
+    // Search for the pattern in the memory
+    let found_address = find_pattern(memory_start, memory_size, pattern, strlen(pattern));  // Scan for the pattern
+    if found_address != null {
+        print("Pattern found at address:", found_address);  // Print the memory address where the pattern was found
+    } else {
+        print("Pattern not found.");
+    }
+
+    // Free the allocated memory
+    free memory_start;
+}
