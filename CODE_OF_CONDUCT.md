@@ -19,7 +19,7 @@ Examples of unacceptable behavior:
 
 ## Enforcement
 
-Instances of unacceptable behavior may be reported to [conduct@seregonwar.com](mailto:conduct@seregonwar.com). All reports will be reviewed and addressed confidentially.
+Instances of unacceptable behavior may be reported to [conduct@seregonwar.com](mailto:seregonwar@gmail.com). All reports will be reviewed and addressed confidentially.
 
 ---
 
