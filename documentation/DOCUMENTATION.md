@@ -11,7 +11,7 @@
    - [Error handling](#management-of-errors)
    - [Memory operations](#memory-operations)
    - [Cryptographic operations](#cryptographic-operations)
-4. [Practical examples](#examples-practical)
+4. [Practical examples](https://github.com/seregonwar/MetaForge/tree/main/examples)
 5. [Future extensions](#extensions-futures)
 ---
 ## **Introduction**
