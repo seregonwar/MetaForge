@@ -119,11 +119,7 @@ We welcome contributions! Please check the [CONTRIBUTING.md](CONTRIBUTING.md) fi
 
 ## License
 
-MetaForge is licensed under the **Maudrigal Inc License**:
-- Commercial use requires a license fee.
-- Redistribution is prohibited; only the official repository is allowed.
-
-For more details, contact **SeregonWar** via GitHub.
+license free
 
 ---
 
