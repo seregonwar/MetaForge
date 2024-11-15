@@ -1,0 +1,31 @@
+{
+  "name": "meta-forge-syntax",
+  "displayName": "MetaForge Syntax",
+  "description": "Support for MetaForge syntax highlighting",
+  "version": "1.0.0",
+  "publisher": "tuo-nome-utente",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "meta-forge",
+        "aliases": ["MetaForge", "meta-forge"],
+        "extensions": [".mf", ".meta"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "meta-forge",
+        "scopeName": "source.meta-forge",
+        "path": "./syntaxes/meta-forge.tmLanguage"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:meta-forge"
+  ],
+  "main": "./src/extension.js"
+}
