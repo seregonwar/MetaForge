@@ -1,4 +1,3 @@
-
 # MetaForge Programming Language
 
 MetaForge is a low-level meta-programming language that bridges the gap between assembly and C, while integrating support for Python, C, and C++ libraries. Designed for system-level programming and advanced memory manipulation, MetaForge offers a unique approach to multi-language interoperability and high-performance computing.
@@ -47,6 +46,25 @@ Supports standard control flow constructs:
 - **Pattern Matching:** Match complex data structures with custom patterns.
 - **List Comprehension:** Write concise and efficient iterations.
 - **Lambda Functions:** Inline anonymous functions for functional programming.
+
+---
+
+## How to Compile
+
+MetaForge programs are compiled using the official **MetaForge Compiler (MFC)**. Follow these steps to set up the compiler and start compiling your projects.
+
+1. Visit the [MetaForge Compiler Repository](https://github.com/seregonwar/MetaForge-Compiler) to download or clone the compiler source code.
+2. Follow the instructions in the `readme.md` of the compiler repository to set up the environment.
+3. Compile your MetaForge programs using the following command structure:
+   ```bash
+   python src/compile_metaforge.py <source_file> -o <output_file> [options]
+   ```
+   Example:
+   ```bash
+   python src/compile_metaforge.py examples/hello_world.mf -o build/hello_world.exe --platform windows --arch x64 -v
+   ```
+
+For detailed options and configuration, refer to the compiler's documentation in its repository.
 
 ---
 
@@ -119,7 +137,7 @@ We welcome contributions! Please check the [CONTRIBUTING.md](CONTRIBUTING.md) fi
 
 ## License
 
-license free
+License free
 
 ---
 
