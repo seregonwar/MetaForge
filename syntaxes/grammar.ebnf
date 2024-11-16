@@ -123,7 +123,7 @@ free_op       ::= "free" expression
 deref_op      ::= "deref" expression
 ref_op        ::= "ref" identifier
 
-// Aggiungiamo le regole per le operazioni crittografiche
+
 crypto_op     ::= encrypt_op
                 | decrypt_op
                 | hash_op
@@ -140,16 +140,16 @@ cipher_params ::= "algorithm" ":" identifier ";"
                 | "mode" ":" identifier ";"
                 | "padding" ":" identifier ";"
 
-// Aggiungiamo tipi specifici per la crittografia
+
 crypto_type   ::= "key"
                 | "cipher"
                 | "hash"
                 | "bytes"
                 | "stream"
 
-// Aggiungiamo il supporto per l'operatore di scope
+
 scoped_identifier ::= identifier ("::" identifier)*
 
-// Modifichiamo la regola per function_call
+
 function_call    ::= scoped_identifier "(" argument_list? ")"
 argument_list    ::= expression ("," expression)*
