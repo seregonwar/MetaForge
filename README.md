@@ -4,7 +4,32 @@ MetaForge is a low-level meta-programming language that bridges the gap between 
 
 ---
 
-## Key Features
+## **Index**
+1. [Introduction](#introduction)  
+2. [Key Features](#key-features)  
+3. [Language Overview](#language-overview)  
+   - [Syntax](#syntax)  
+   - [Memory Model](#memory-model)  
+   - [Cryptography](#cryptography)  
+   - [Control Flow](#control-flow)  
+   - [Advanced Features](#advanced-features)  
+4. [How to Compile](#how-to-compile)  
+5. [Installation](#installation)  
+6. [Examples](#examples)  
+7. [Roadmap](#roadmap)  
+8. [Contributing](#contributing)  
+9. [FAQ](#faq)  
+10. [License](#license)
+
+---
+
+## **Introduction**
+
+MetaForge is a low-level meta-programming language that bridges the gap between assembly and C, while integrating support for Python, C, and C++ libraries. Designed for system-level programming and advanced memory manipulation, MetaForge offers a unique approach to multi-language interoperability and high-performance computing.
+
+---
+
+## **Key Features**
 
 - **Low-Level Access:** Positioned between assembly and C, offering direct communication with system resources.
 - **Cross-Language Integration:** Supports Python, C, and C++ libraries seamlessly.
@@ -13,45 +38,28 @@ MetaForge is a low-level meta-programming language that bridges the gap between 
 
 ---
 
-## Language Overview
+## **Language Overview**
 
-### Basic Types
-MetaForge provides a wide range of basic types, including:
-- Signed and unsigned integers: `i8`, `u8`, `i16`, `u16`, etc.
-- Floating-point numbers: `f32`, `f64`
-- Special types: `ptr`, `key`, `cipher`, `hash`, etc.
+### **[Syntax](docs/syntax.md)**  
+A detailed overview of MetaForge syntax, including statements, advanced types, pattern matching, and error handling.
 
-### Memory Operations
-MetaForge includes powerful memory manipulation commands:
-- `alloc` for memory allocation
-- `free` for deallocation
-- `deref` for dereferencing pointers
-- `ref` for obtaining references
+### **[Memory Model](docs/memory_model.md)**  
+Explore how MetaForge manages memory allocation, deallocation, and pointers.
 
-### Cryptographic Operations
-Built-in cryptographic primitives:
-- `encrypt` and `decrypt` for data security
-- `hash` for generating hashes
-- `genkey` for key generation
-- `cipher` for advanced cryptographic operations
+### **[Cryptography](docs/cryptography.md)**  
+Built-in cryptographic tools and their usage.
 
-### Control Flow
-Supports standard control flow constructs:
-- `if`, `while`, `for`
-- Pattern matching with `match`
-- Error handling with `try` and `catch`
+### **[Control Flow](docs/control_flow.md)**  
+Understand control structures like loops, conditionals, and error handling.
 
-### Advanced Constructs
-- **Generics:** Define reusable code with parameterized types.
-- **Pattern Matching:** Match complex data structures with custom patterns.
-- **List Comprehension:** Write concise and efficient iterations.
-- **Lambda Functions:** Inline anonymous functions for functional programming.
+### **[Advanced Features](docs/advanced_features.md)**  
+Learn about generics, pattern matching, list comprehension, and lambda functions.
 
 ---
 
-## How to Compile
+## **How to Compile**
 
-MetaForge programs are compiled using the official **MetaForge Compiler (MFC)**. Follow these steps to set up the compiler and start compiling your projects.
+MetaForge programs are compiled using the official **MetaForge Compiler (MFC)**. 
 
 1. Visit the [MetaForge Compiler Repository](https://github.com/seregonwar/MetaForge-Compiler) to download or clone the compiler source code.
 2. Follow the instructions in the `readme.md` of the compiler repository to set up the environment.
@@ -64,11 +72,11 @@ MetaForge programs are compiled using the official **MetaForge Compiler (MFC)**.
    python src/compile_metaforge.py examples/hello_world.mf -o build/hello_world.exe --platform windows --arch x64 -v
    ```
 
-For detailed options and configuration, refer to the compiler's documentation in its repository.
+For detailed options and configuration, refer to the [CLI Commands documentation](docs/cli_commands.md).
 
 ---
 
-## Installation
+## **Installation**
 
 MetaForge requires the following dependencies:
 1. **Python (3.x)** for integration scripts.
@@ -92,7 +100,9 @@ MetaForge requires the following dependencies:
 
 ---
 
-## Examples
+## **Examples**
+
+Explore more in the [Examples and Templates](docs/examples_and_templates.md) documentation or visit the [examples folder](https://github.com/seregonwar/MetaForge/tree/main/examples).
 
 ### Hello World
 ```metaforge
@@ -120,26 +130,30 @@ fn compute_hash() -> hash {
 
 ---
 
-## Roadmap
+## **Roadmap**
 
-- Simplify syntax while maintaining low-level control.
-- Expand compatibility with additional languages.
-- Enable web-system integration.
-- Develop a dedicated IDE with real-time syntax support.
+For planned features and future development, check the [Design Philosophy and Roadmap](docs/design_philosophy.md) document.
 
 ---
 
-## Contributing
+## **Contributing**
 
-We welcome contributions! Please check the [CONTRIBUTING.md](CONTRIBUTING.md) file for details on our coding standards and submission process.
+We welcome contributions! Please check the [Contributing Guidelines](docs/contributing_guidelines.md) for details on our coding standards and submission process.
 
 ---
 
-## License
+## **FAQ**
 
-License free
+For common questions and answers, refer to the [FAQ](docs/faq.md).
+
+---
+
+## **License**
+
+License free.
 
 ---
 
 **Developed with passion by SeregonWar**  
-Explore, Extend, and Forge the Future!
+Explore, Extend, and Forge the Future!  
+
