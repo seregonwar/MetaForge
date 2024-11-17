@@ -28,7 +28,9 @@ MetaForge is a low-level meta-programming language that bridges the gap between 
 MetaForge is a low-level meta-programming language that bridges the gap between assembly and C, while integrating support for Python, C, and C++ libraries. Designed for system-level programming and advanced memory manipulation, MetaForge offers a unique approach to multi-language interoperability and high-performance computing.
 
 ---
-
+## what MetaForge is designed for
+MetaForge is designed to facilitate interoperability between low, medium and high level languages. It is designed to interact most effectively with the operating system on which it works and for reverse engineering. 
+___
 ## **Key Features**
 
 - **Low-Level Access:** Positioned between assembly and C, offering direct communication with system resources.
