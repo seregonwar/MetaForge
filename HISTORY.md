@@ -23,7 +23,7 @@ MetaForge is a meta programming language designed to combine power, simplicity a
 
 ## Roadmap
 ### Future planned developments:
-1. **Dedicated **IDE:** Creation of an integrated development environment to facilitate writing and debugging in MetaForge.
+1. **Dedicated** **IDE:** Creation of an integrated development environment to facilitate writing and debugging in MetaForge.
 2. **Expanding compatibility:** Integration with additional programming languages and emerging technologies.
 3. **Adaptation for distributed systems:** Make MetaForge suitable for cloud-native applications.
 4. **Comprehensive documentation:** Publication of detailed user guidance and practical examples.
