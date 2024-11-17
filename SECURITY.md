@@ -13,7 +13,7 @@
 If you discover a security vulnerability in MetaForge, please follow these steps:
 
 1. **Do Not Disclose Publicly**  
-   Send an email to [security@seregonwar.com](mailto:security@seregonwar.com) with details of the vulnerability.
+   Send an email to [seregonwar@gmail.com](mailto:seregonwar@gmail.com) with details of the vulnerability.
 
 2. **Provide the Following Information**  
    - A detailed description of the issue.
